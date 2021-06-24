@@ -1,7 +1,6 @@
 package dev.rcarrillo.devz;
 
 import java.text.Normalizer;
-import java.util.Locale;
 
 public class Palindrome {
 
