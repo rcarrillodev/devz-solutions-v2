@@ -1,6 +1,8 @@
 package dev.rcarrillo.devz.arraysstrings;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Dado un arreglo de números y un valor deseado, regresa los índices de los dos
@@ -9,14 +11,14 @@ import java.util.Arrays;
  * Puedes asumir que siempre hay una sola solución. No puedes usar el mismo elemento
  * dos veces.
  */
-public class SumThis {
+public class TwoSum {
 
     public static void main(String[] args) {
-        int[] result = sumThis(new int[]{3, -1, 0, 1} ,4);
+        int[] result = twoSum(new int[]{3, -1, 0, 1} ,0);
         System.out.println(Arrays.toString(result));
     }
 
-    private static int[] sumThis(int[] values, int expected) {
+    private static int[] twoSum(int[] values, int expected) {
         if(values == null) {
             return new int [0];
         }
@@ -24,13 +26,13 @@ public class SumThis {
             return new int [0];
         }
 
+        Map<Integer, Integer> memory = new HashMap<>();
         for(int i=0; i<values.length;i++){
-           int current = values[i];
-           for(int j = i+1; j<values.length;j++){
-               if(current + values[j]==expected){
-                   return new int[]{i, j};
-               }
-           }
+            int tmp = expected - values[i];
+            if(memory.containsKey(values[i])){
+                return new int[]{i,memory.get(values[i])};
+            }
+            memory.put(tmp, i);
         }
         return new int[0];
     }
