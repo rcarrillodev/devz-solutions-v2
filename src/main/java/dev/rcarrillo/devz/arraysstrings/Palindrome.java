@@ -1,7 +1,12 @@
-package dev.rcarrillo.devz;
+package dev.rcarrillo.devz.arraysstrings;
 
 import java.text.Normalizer;
 
+/**
+ * Escribe un programa que verifique que una frase es un palíndromo.
+ * Un palíndromo es una frase que se lee igual de derecha a izquierda que de izquierda
+ * a derecha.
+ */
 public class Palindrome {
 
     public static void main(String[] args) {
@@ -20,7 +25,7 @@ public class Palindrome {
         char [] charArray = phrase.toCharArray();
         int start = 0;
         int end = charArray.length-1;
-        for(int i = 0; i<=charArray.length/2; i++){
+        for(int i = 0; i<charArray.length/2; i++){
             if(charArray[start]!=charArray[end]){
                 return false;
             }
