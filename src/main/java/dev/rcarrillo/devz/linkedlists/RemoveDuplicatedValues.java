@@ -3,6 +3,9 @@ package dev.rcarrillo.devz.linkedlists;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Escribe un programa borre elementos duplicados de un Linked List.
+ */
 public class RemoveDuplicatedValues {
     public static void main(String[] args) {
         IntLinkedList list = new IntLinkedList();
